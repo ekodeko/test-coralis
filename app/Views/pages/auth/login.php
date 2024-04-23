@@ -1,8 +1,11 @@
 <div class="login-container">
     <h2>Login Form</h2>
-    <?php if (session('errors')) : ?>
-        <div class="error"><?= session('errors') ?></div>
-    <?php endif; ?>
+    <?php if (session('errors')) :
+        foreach (session('errors') as $key => $value) { ?>
+            <div class="error"><?= $value ?></div>
+    <?php
+        }
+    endif; ?>
     <?php if (session('success')) : ?>
         <div class="success"><?= session('success') ?></div>
     <?php endif; ?>
